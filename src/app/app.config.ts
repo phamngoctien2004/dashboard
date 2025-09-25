@@ -6,10 +6,8 @@ import {provideAnimationsAsync} from '@angular/platform-browser/animations/async
 import {providePrimeNG} from 'primeng/config';
 import Aura from '@primeuix/themes/aura';
 import {provideHttpClient, withInterceptors} from '@angular/common/http';
-import {AuthInterceptors} from './core/interceptors/AuthInterceptors';
-import {ToastInterceptors} from './core/interceptors/ToastInterceptors';
+
 import {MessageService} from 'primeng/api';
-import {HttpErrorHandler} from './core/interceptors/HttpErrorHandler';
 
 
 export const appConfig: ApplicationConfig = {
@@ -19,9 +17,7 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes),
     provideHttpClient(
       withInterceptors([
-        AuthInterceptors,
-        ToastInterceptors,
-        HttpErrorHandler
+
       ])
     ),
     MessageService,
